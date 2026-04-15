@@ -203,10 +203,7 @@ body {
     max-width: 600px;
     margin: 32px auto 0;
     display: block;
-    /* This makes black-on-white images turn into white text with transparent bg on dark mode! */
-    filter: invert(1);
-    mix-blend-mode: screen; 
-    opacity: 0.9;
+    border-radius: 8px; /* Slightly round the edges of the white block so it looks premium */
 }
 
 .quote-bar-section {
