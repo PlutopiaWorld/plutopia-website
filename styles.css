@@ -482,10 +482,14 @@ body {
         grid-template-columns: 1fr;
         gap: 32px;
     }
+    .hero {
+        height: 65vh;
+        min-height: 550px;
+    }
     .hero-title { 
         font-size: clamp(2rem, 8vw, 2.5rem);
         white-space: normal;
-        margin-top: 100px;
+        margin-top: 60px;
     }
     .hero-quote-container {
         margin-top: 32px;
