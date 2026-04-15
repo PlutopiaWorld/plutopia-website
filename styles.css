@@ -523,3 +523,10 @@ body {
 .contact-email a { color: #aaaaaa; text-decoration: none; font-size: 1.1rem; font-weight: 300; transition: var(--transition-smooth); }
 .contact-email a:hover { color: #fff; }
 @media (max-width: 600px) { .form-row { flex-direction: column; gap: 24px; } }
+
+/* About Page */
+.about-page { background-color: #000; min-height: 100vh; display: flex; flex-direction: column; }
+.about-main { padding: 180px 24px 120px; flex: 1; display: flex; justify-content: center; align-items: flex-start; }
+.about-container { width: 100%; max-width: 800px; text-align: center; }
+.about-title { font-size: 3rem; font-weight: 800; margin-bottom: 40px; text-transform: uppercase; }
+.about-content p { color: var(--color-text-secondary); margin-bottom: 24px; font-weight: 300; line-height: 1.8; font-size: 1.25rem; }
