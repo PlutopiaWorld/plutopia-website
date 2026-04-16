@@ -137,6 +137,26 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+    padding: 8px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -213,7 +233,6 @@ body {
 .quote-bar-section {
     background-color: var(--color-bg-deep);
     padding: 0px 24px 40px;
-    border-bottom: 1px solid var(--color-border);
 }
 
 .hero-quote-container {
@@ -277,7 +296,7 @@ body {
 
 /* Mission Section */
 .mission-section {
-    padding: 160px 48px 120px;
+    padding: 110px 48px 120px;
     background-color: var(--color-bg-deep);
 }
 
