@@ -652,3 +652,78 @@ body {
 .about-container { width: 100%; max-width: 800px; text-align: center; }
 .about-title { font-size: 3rem; font-weight: 800; margin-bottom: 40px; text-transform: uppercase; }
 .about-content p { color: var(--color-text-secondary); margin-bottom: 24px; font-weight: 300; line-height: 1.8; font-size: 1.25rem; }
+
+/* Dedicated Work Page Styles */
+.work-page-body {
+    background-color: var(--color-bg-deep);
+    min-height: 100vh;
+}
+
+.work-page-main {
+    padding: 160px 24px 120px;
+}
+
+.work-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.work-page-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.work-page-subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 80px;
+}
+
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 48px;
+}
+
+.youtube-card {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.youtube-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.youtube-info {
+    padding: 24px;
+}
+
+.youtube-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.youtube-info p {
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .youtube-grid {
+        grid-template-columns: 1fr;
+    }
+}
