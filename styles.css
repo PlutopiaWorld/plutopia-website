@@ -574,7 +574,7 @@ body {
     .hero-content {
         position: relative;
         z-index: 5;
-        margin-top: calc(-100vw * 0.5625 + 32px); /* Forces exact mathematical overlap onto video */
+        margin-top: -120px; /* Safe, fixed overlap so it never hits the header cutoff */
         padding-top: 0;
         display: flex;
         flex-direction: column;
@@ -582,19 +582,21 @@ body {
     }
 
     .hero-title { 
-        font-size: clamp(1.2rem, 6vw, 2.2rem);
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
         white-space: normal;
         margin-top: 0px;
         text-shadow: 2px 2px 12px rgba(0,0,0,0.8); /* Maintain contrast over video */
+        text-align: center;
     }
 
     .hero-awards {
-        width: 80px;
-        margin-top: 8px; /* Sits naturally under title */
+        width: 180px; /* Restored massive scale; explicitly fixes tiny image issue */
+        max-width: 90%;
+        margin-top: 24px; /* Sits naturally under title */
     }
 
     .hero-quote-container {
-        margin-top: 8vh; /* Physically steps off the video layer back onto black space */
+        margin-top: 4vh; /* Naturally steps down beneath the awards */
         padding: 16px;
         width: 95%;
         min-height: auto;
