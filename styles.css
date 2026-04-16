@@ -233,6 +233,8 @@ body {
 .quote-bar-section {
     background-color: var(--color-bg-deep);
     padding: 0px 24px 10px;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-quote-container {
