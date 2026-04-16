@@ -296,8 +296,8 @@ body {
 
 /* Mission Section */
 .mission-section {
-    padding: 110px 48px 120px;
-    background-color: var(--color-bg-deep);
+    padding: 60px 48px 60px;
+    background-color: #000000;
 }
 
 .section-title {
@@ -379,7 +379,7 @@ body {
 /* Featured Work / Gallery Section */
 .work-section {
     padding: 120px 48px;
-    background-color: var(--color-bg-secondary);
+    background-color: #000000;
 }
 
 .gallery-grid {
