@@ -232,14 +232,14 @@ body {
 
 .quote-bar-section {
     background-color: var(--color-bg-deep);
-    padding: 0px 24px 40px;
+    padding: 0px 24px 10px;
 }
 
 .hero-quote-container {
     min-height: 120px;
     width: fit-content;
     margin-top: -10px;
-    margin-bottom: 48px;
+    margin-bottom: 20px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -296,7 +296,7 @@ body {
 
 /* Mission Section */
 .mission-section {
-    padding: 60px 48px 60px;
+    padding: 10px 48px 60px;
     background-color: #000000;
 }
 
