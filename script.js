@@ -26,12 +26,12 @@ document.querySelectorAll('.mission-card, .section-title, .gallery-item').forEac
 
 // Cinematic Quote Rotator
 const quotes = [
-    { text: '"Plutopia is the indie Pixar"', author: '- Jon Henson, VP of Doing Things' },
+    { text: '"Plutopia is disrupting story telling with AI"', author: '- Lauren Diamont, VP of Triller' },
     { text: '"Dope AF"', author: '- Snoop Dogg' },
+    { text: '"Plutopia is the indie Pixar"', author: '- Jon Henson, VP of Doing Things' },
     { text: '"Plutopia Studios is one of the leading forces in AI filmmaking"', author: '- Jesse Wellens, Founder of Deathrow AI' },
     { text: '"Plutopia Bridges the gap between traditional creation and AI"', author: '- Josh Cohen, Paradigm Talent Agency' },
-    { text: '"Going crazy with the AI!"', author: '- Sway Lee' },
-    { text: '"Plutopia is disrupting story telling with AI"', author: '- Lauren Diamont, VP of Triller' }
+    { text: '"Going crazy with the AI!"', author: '- Sway Lee' }
 ];
 
 let currentQuoteIdx = 0;
