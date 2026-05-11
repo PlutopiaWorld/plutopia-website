@@ -574,7 +574,7 @@ body {
     .hero-content {
         position: relative;
         z-index: 5;
-        margin-top: -120px; /* Safe, fixed overlap so it never hits the header cutoff */
+        margin-top: -160px; /* Safe, fixed overlap so it never hits the header cutoff */
         padding-top: 0;
         display: flex;
         flex-direction: column;
