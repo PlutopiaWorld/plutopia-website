@@ -601,6 +601,7 @@ body {
         padding: 16px;
         width: 95%;
         min-height: auto;
+        transform: translateY(20px);
     }
     .hero-quote {
         font-size: 1.15rem;
