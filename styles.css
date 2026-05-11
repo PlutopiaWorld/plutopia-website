@@ -268,7 +268,7 @@ body {
 .hero-quote-author {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #cccccc;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -605,6 +605,10 @@ body {
     }
     .hero-quote {
         font-size: 1.15rem;
+        color: #d4d4d4;
+    }
+    .hero-quote-author {
+        color: #cccccc;
     }
     .gallery-grid { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
