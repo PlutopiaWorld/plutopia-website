@@ -259,7 +259,7 @@ body {
 .hero-quote {
     font-size: 1.35rem;
     font-weight: 300;
-    color: #ffffff;
+    color: #e6e6e6;
     margin-bottom: 12px;
     font-style: italic;
     line-height: 1.6;
@@ -268,7 +268,7 @@ body {
 .hero-quote-author {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #cccccc;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
