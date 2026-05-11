@@ -592,7 +592,8 @@ body {
     .hero-awards {
         width: 180px; /* Restored massive scale; explicitly fixes tiny image issue */
         max-width: 90%;
-        margin-top: 12px; /* Sits naturally under title */
+        margin-top: 4px; /* Sits naturally under title */
+        padding: 12px;
     }
 
     .hero-quote-container {
