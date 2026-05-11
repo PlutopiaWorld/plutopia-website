@@ -597,7 +597,7 @@ body {
     }
 
     .hero-quote-container {
-        margin-top: 6vh; /* Naturally steps down beneath the awards */
+        margin-top: 8vh; /* Naturally steps down beneath the awards */
         padding: 16px;
         width: 95%;
         min-height: auto;
