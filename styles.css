@@ -582,8 +582,8 @@ body {
     }
 
     .hero-title { 
-        font-size: clamp(1.6rem, 7vw, 2.5rem);
-        white-space: normal;
+        font-size: clamp(1rem, 5vw, 2.5rem);
+        white-space: nowrap;
         margin-top: 0px;
         text-shadow: 2px 2px 12px rgba(0,0,0,0.8); /* Maintain contrast over video */
         text-align: center;
@@ -592,7 +592,7 @@ body {
     .hero-awards {
         width: 180px; /* Restored massive scale; explicitly fixes tiny image issue */
         max-width: 90%;
-        margin-top: 24px; /* Sits naturally under title */
+        margin-top: 12px; /* Sits naturally under title */
     }
 
     .hero-quote-container {
@@ -605,7 +605,8 @@ body {
         font-size: 1.15rem;
     }
     .gallery-grid { grid-template-columns: 1fr; }
-    .footer-content { grid-template-columns: 1fr; gap: 40px; }
+    .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: 1 / -1; }
     .mission-section, .work-section { padding: 60px 24px; }
     .section-title { font-size: 2.2rem; margin-bottom: 32px; }
 }
