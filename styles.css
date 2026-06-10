@@ -8,6 +8,10 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --font-primary: 'Outfit', sans-serif;
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --color-highlight-purple: #b96bf8;
+    --color-highlight-violet: #8b63f8;
+    --color-highlight-indigo: #636bf8;
+    --color-highlight-blue: #3b82f6;
 }
 
 * {
@@ -331,6 +335,68 @@ body {
     font-size: 1.15rem;
     line-height: 1.8;
     color: var(--color-text-secondary);
+}
+
+/* Mission Section Highlight Spans */
+.highlight-purple {
+    color: var(--color-highlight-purple);
+    font-weight: 600;
+}
+.highlight-violet {
+    color: var(--color-highlight-violet);
+    font-weight: 600;
+}
+.highlight-indigo {
+    color: var(--color-highlight-indigo);
+    font-weight: 600;
+}
+.highlight-blue {
+    color: var(--color-highlight-blue);
+    font-weight: 600;
+}
+.text-white {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+/* Mission Layout Restructuring */
+.mission-intro-container {
+    max-width: 1000px;
+    margin: 0 auto 48px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.mission-lead-text {
+    font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+.mission-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 48px auto 0 auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.mission-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .mission-grid {
