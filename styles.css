@@ -574,6 +574,42 @@ body {
     }
 }
 
+/* Plutopia Universe Styles */
+.universe-section {
+    margin-top: 120px;
+    text-align: center;
+    width: 100%;
+}
+
+.universe-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-highlight-purple);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.universe-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+}
+
+.universe-desc {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    letter-spacing: 0.3px;
+}
+
 /* Featured Work / Gallery Section */
 .work-section {
     padding: 40px 48px 60px;
