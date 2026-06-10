@@ -434,6 +434,31 @@ body {
     font-weight: 300;
 }
 
+/* Vision Section (Replaces Socials Image) */
+.vision-section {
+    padding: clamp(60px, 10vw, 120px) 24px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.vision-container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.vision-text {
+    font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
 /* Featured Work / Gallery Section */
 .work-section {
     padding: 40px 48px 60px;
