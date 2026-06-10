@@ -459,6 +459,121 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Studio Model Styles */
+.studio-model-section {
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+.studio-model-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-highlight-purple);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.studio-model-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin-bottom: 64px;
+    letter-spacing: 0.5px;
+}
+
+.studio-model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.studio-model-col {
+    padding: 60px 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.studio-model-col:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.studio-model-num {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+}
+
+.num-purple {
+    color: var(--color-highlight-purple);
+}
+
+.num-violet {
+    color: var(--color-highlight-violet);
+}
+
+.num-blue {
+    color: var(--color-highlight-blue);
+}
+
+.studio-model-heading {
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.studio-model-divider {
+    width: 48px;
+    height: 3px;
+    margin-bottom: 24px;
+}
+
+.div-purple {
+    background-color: var(--color-highlight-purple);
+}
+
+.div-violet {
+    background-color: var(--color-highlight-violet);
+}
+
+.div-blue {
+    background-color: var(--color-highlight-blue);
+}
+
+.studio-model-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Responsiveness for Mobile */
+@media (max-width: 768px) {
+    .studio-model-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .studio-model-col {
+        padding: 40px 20px;
+    }
+    
+    .studio-model-col:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
 /* Featured Work / Gallery Section */
 .work-section {
     padding: 40px 48px 60px;
