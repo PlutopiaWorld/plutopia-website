@@ -477,12 +477,13 @@ body {
 }
 
 .studio-model-title {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 400;
+    font-size: 3rem;
+    font-family: var(--font-primary);
+    font-weight: 800;
     color: var(--color-text-primary);
     margin-bottom: 64px;
-    letter-spacing: 0.5px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
 }
 
 .studio-model-grid {
@@ -592,12 +593,13 @@ body {
 }
 
 .universe-title {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 400;
+    font-size: 3rem;
+    font-family: var(--font-primary);
+    font-weight: 800;
     color: var(--color-text-primary);
     margin-bottom: 32px;
-    letter-spacing: 0.5px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
 }
 
 .universe-desc {
@@ -1126,7 +1128,8 @@ body {
     .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
     .footer-brand { grid-column: 1 / -1; }
     .mission-section, .work-section { padding: 60px 24px; }
-    .section-title { font-size: 2.2rem; margin-bottom: 32px; }
+    .section-title, .studio-model-title, .universe-title { font-size: 2.2rem; }
+    .section-title, .studio-model-title { margin-bottom: 32px; }
 }
 
 /* About Page Specific Styles */
