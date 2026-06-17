@@ -22,4 +22,4 @@ AI-Native Production`,body:"The studio uses AI to make cinematic storytelling fa
           .builds-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .channels-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
-      `})]})}const vS=new Ob;function bS(){return p.jsxs(Jv,{children:[p.jsx(Om,{path:"/",component:yS}),p.jsx(Om,{component:gS})]})}function xS(){return p.jsx(Cb,{client:vS,children:p.jsxs(cS,{children:[p.jsx(yp,{base:"/".replace(/\/$/,""),children:p.jsx(bS,{})}),p.jsx(D1,{})]})})}Dv.createRoot(document.getElementById("root")).render(p.jsx(xS,{}));
+      `})]})}const vS=new Ob;function bS(){return p.jsxs(Jv,{children:[p.jsx(Om,{path:"*",component:yS}),p.jsx(Om,{component:gS})]})}function xS(){return p.jsx(Cb,{client:vS,children:p.jsxs(cS,{children:[p.jsx(yp,{base:"/".replace(/\/$/,""),children:p.jsx(bS,{})}),p.jsx(D1,{})]})})}Dv.createRoot(document.getElementById("root")).render(p.jsx(xS,{}));
