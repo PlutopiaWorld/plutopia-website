@@ -6,10 +6,16 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    background-color: #050505;
+}
+
 body.dadjoke-page {
     background-color: #050505;
     background-image: radial-gradient(circle at 50% 50%, rgba(139, 99, 248, 0.08) 0%, transparent 70%);
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,8 +27,11 @@ body.dadjoke-page {
 .dadjoke-main {
     width: 100%;
     max-width: 900px;
-    padding: 60px 24px;
+    padding: 24px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .joke-display {
