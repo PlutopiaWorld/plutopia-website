@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke of the Day | Plutopia</title>
+    <meta property="og:title" content="Joke of the Day | Plutopia">
+    <meta property="og:description" content="Check out the Plutopia Joke of the Day! Scan your merch QR code to load a fresh joke every single day.">
+    <meta property="og:image" content="https://plutopia.info/assets/og-logo.jpg">
+    <meta property="og:url" content="https://plutopia.info/dadjoke">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://plutopia.info/assets/og-logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dadjoke-page">
+    <header class="header scrolled" id="main-header">
+        <a href="../index.html" class="logo-link"><img src="../assets/logo.jpg" alt="Plutopia Logo" class="logo-img"></a>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../work.html">Work</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main class="dadjoke-main">
+        <div class="dadjoke-container">
+            <div class="joke-card fade-in-up">
+                <div class="card-header">
+                    <span class="joke-badge">JOKE OF THE DAY</span>
+                    <span id="current-date" class="joke-date">Wednesday, August 19, 2026</span>
+                </div>
+                
+                <div class="joke-content">
+                    <div id="setup-container" class="setup-text"></div>
+                    <button id="reveal-btn" class="reveal-btn">Reveal Punchline</button>
+                    <div id="punchline-container" class="punchline-text hidden"></div>
+                </div>
+
+                <div class="card-actions">
+                    <button id="copy-btn" class="action-btn" title="Copy Joke">
+                        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span id="copy-text">Copy Joke</span>
+                    </button>
+                    <button id="next-btn" class="action-btn primary" title="Next Random Joke">
+                        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                        </svg>
+                        <span>Another Joke</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="merch-cta-card fade-in-up" style="animation-delay: 0.2s;">
+                <h3>Get The Plutopia Merch</h3>
+                <p>Scan your Plutopia shirt, hoodie, or sticker QR code to instantly update and load a fresh dad joke every 24 hours.</p>
+                <a href="../contact.html" class="merch-link-btn">Shop Merch Store</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="jokes.js"></script>
+    <script>
+        // Setup menu for mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+
+            // Display current date
+            const dateEl = document.getElementById('current-date');
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateEl.textContent = new Date().toLocaleDateString('en-US', options);
+
+            // Joke Loading Logic
+            const setupEl = document.getElementById('setup-container');
+            const punchlineEl = document.getElementById('punchline-container');
+            const revealBtn = document.getElementById('reveal-btn');
+            const copyBtn = document.getElementById('copy-btn');
+            const copyText = document.getElementById('copy-text');
+            const nextBtn = document.getElementById('next-btn');
+
+            let activeJoke = null;
+
+            const loadJoke = (joke) => {
+                activeJoke = joke;
+                
+                // Hide punchline and show reveal button if setup exists
+                if (joke.q) {
+                    setupEl.textContent = joke.q;
+                    setupEl.classList.remove('one-liner');
+                    punchlineEl.textContent = joke.a;
+                    punchlineEl.classList.add('hidden');
+                    punchlineEl.classList.remove('revealed');
+                    revealBtn.classList.remove('hidden');
+                } else {
+                    // One-liner joke
+                    setupEl.textContent = joke.a;
+                    setupEl.classList.add('one-liner');
+                    punchlineEl.textContent = '';
+                    punchlineEl.classList.add('hidden');
+                    revealBtn.classList.add('hidden');
+                }
+                
+                // Reset copy button
+                copyText.textContent = "Copy Joke";
+            };
+
+            // Get deterministic Daily Joke
+            const loadDailyJoke = () => {
+                if (typeof redditJokes !== 'undefined' && redditJokes.length > 0) {
+                    const today = new Date();
+                    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+                    const index = Math.abs(seed) % redditJokes.length;
+                    loadJoke(redditJokes[index]);
+                } else {
+                    loadJoke({ q: "What's the best thing about Switzerland?", a: "I don't know, but the flag is a big plus." });
+                }
+            };
+
+            // Load initial Daily Joke
+            loadDailyJoke();
+
+            // Reveal Punchline Action
+            revealBtn.addEventListener('click', () => {
+                punchlineEl.classList.remove('hidden');
+                setTimeout(() => {
+                    punchlineEl.classList.add('revealed');
+                }, 50);
+                revealBtn.classList.add('hidden');
+            });
+
+            // Copy to Clipboard Action
+            copyBtn.addEventListener('click', () => {
+                let textToCopy = "";
+                if (activeJoke.q) {
+                    textToCopy = `${activeJoke.q}\n\n${activeJoke.a}`;
+                } else {
+                    textToCopy = activeJoke.a;
+                }
+
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    copyText.textContent = "Copied!";
+                    setTimeout(() => {
+                        copyText.textContent = "Copy Joke";
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+
+            // Load Next Random Joke
+            nextBtn.addEventListener('click', () => {
+                if (typeof redditJokes !== 'undefined' && redditJokes.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * redditJokes.length);
+                    loadJoke(redditJokes[randomIndex]);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
