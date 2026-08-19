@@ -1,299 +1,71 @@
-/* Dad Joke Page Specific Styling */
+/* Minimalist Daily Dad Joke Styling */
 
-body.dadjoke-page {
-    background-color: var(--color-bg-deep);
-    background-image: radial-gradient(circle at 50% 30%, rgba(139, 99, 248, 0.1) 0%, transparent 60%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Adjust header to sit on top of the main container */
-.dadjoke-page .header {
-    background: transparent;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
+body.dadjoke-page {
+    background-color: #050505;
+    background-image: radial-gradient(circle at 50% 50%, rgba(139, 99, 248, 0.08) 0%, transparent 70%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    color: #ffffff;
+    overflow: hidden;
 }
 
 .dadjoke-main {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 180px 24px 80px; /* Large top padding to account for header height */
     width: 100%;
-}
-
-.dadjoke-container {
-    width: 100%;
-    max-width: 680px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-}
-
-/* Main Joke Card with Glassmorphism and Neon Border Glow */
-.joke-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 40px;
-    width: 100%;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition-smooth);
-}
-
-/* Subtle glow effect when hovering card */
-.joke-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(185, 107, 248, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.joke-card:hover {
-    border-color: rgba(185, 107, 248, 0.3);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 
-                0 0 40px rgba(185, 107, 248, 0.1);
-}
-
-.joke-card:hover::before {
-    opacity: 1;
-}
-
-.joke-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* Card Header styles */
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    padding-bottom: 20px;
-    margin-bottom: 32px;
-}
-
-.joke-badge {
-    background: linear-gradient(90deg, var(--color-highlight-purple), var(--color-highlight-violet));
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    padding: 6px 14px;
-    border-radius: 50px;
-    text-transform: uppercase;
-    box-shadow: 0 0 15px rgba(185, 107, 248, 0.3);
-}
-
-.joke-date {
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-    font-weight: 400;
-    opacity: 0.8;
-}
-
-/* Joke display and interaction typography */
-.joke-content {
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 800px;
+    padding: 40px 24px;
     text-align: center;
-    margin-bottom: 32px;
-    gap: 24px;
+}
+
+.joke-display {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
 }
 
 .setup-text {
-    font-size: 1.85rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    line-height: 1.4;
-    color: var(--color-text-primary);
-    word-wrap: break-word;
+    line-height: 1.35;
+    color: #ffffff;
     max-width: 100%;
+    word-wrap: break-word;
 }
 
 .setup-text.one-liner {
-    font-size: 1.75rem;
     font-weight: 400;
     font-style: italic;
     color: #f1e9ff;
-    text-shadow: 0 0 20px rgba(185, 107, 248, 0.1);
-}
-
-.reveal-btn {
-    background: linear-gradient(135deg, var(--color-highlight-violet) 0%, var(--color-highlight-blue) 100%);
-    color: #ffffff;
-    border: none;
-    padding: 14px 28px;
-    font-family: var(--font-primary);
-    font-size: 1.05rem;
-    font-weight: 600;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    box-shadow: 0 10px 25px rgba(139, 99, 248, 0.3);
-}
-
-.reveal-btn:hover {
-    transform: scale(1.04);
-    box-shadow: 0 12px 30px rgba(139, 99, 248, 0.45);
-}
-
-.reveal-btn.hidden {
-    display: none;
+    text-shadow: 0 0 30px rgba(185, 107, 248, 0.15);
 }
 
 .punchline-text {
-    font-size: 1.65rem;
+    font-size: 2.25rem;
     font-weight: 700;
-    color: #b96bf8;
     background: linear-gradient(90deg, #d39bfb, #7bb0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(185, 107, 248, 0.25);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    word-wrap: break-word;
+    text-shadow: 0 0 40px rgba(185, 107, 248, 0.2);
+    line-height: 1.35;
     max-width: 100%;
-    margin-top: 10px;
-}
-
-.punchline-text.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.punchline-text.hidden {
-    display: none;
-}
-
-/* Card Action Area styling */
-.card-actions {
-    display: flex;
-    gap: 16px;
-    justify-content: stretch;
-}
-
-.action-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--color-text-primary);
-    padding: 14px 20px;
-    font-family: var(--font-primary);
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.action-btn:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.action-btn.primary {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-.action-btn.primary:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-.action-icon {
-    width: 18px;
-    height: 18px;
-}
-
-/* Merch Shop Call-to-Action Card */
-.merch-cta-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.03) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 30px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transition: var(--transition-smooth);
-}
-
-.merch-cta-card:hover {
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.merch-cta-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: linear-gradient(90deg, #ffffff, #bbbbbb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.merch-cta-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-    margin-bottom: 24px;
-    opacity: 0.8;
-}
-
-.merch-link-btn {
-    display: inline-block;
-    background: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 12px 30px;
-    font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 6px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.merch-link-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+    word-wrap: break-word;
 }
 
 /* Animations */
 .fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
 }
 
 @keyframes fadeInUp {
@@ -305,33 +77,15 @@ body.dadjoke-page {
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
-    .dadjoke-main {
-        padding: 180px 16px 60px;
-    }
-
-    .joke-card {
-        padding: 30px 24px;
-    }
-
     .setup-text {
-        font-size: 1.5rem;
+        font-size: 1.85rem;
     }
 
     .setup-text.one-liner {
-        font-size: 1.45rem;
+        font-size: 1.8rem;
     }
 
     .punchline-text {
-        font-size: 1.35rem;
-    }
-
-    .card-actions {
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
-    }
-
-    .action-btn {
-        width: 100%;
+        font-size: 1.65rem;
     }
 }
