@@ -14,24 +14,27 @@ html {
 body.dadjoke-page {
     background-color: #050505;
     background-image: radial-gradient(circle at 50% 50%, rgba(139, 99, 248, 0.08) 0%, transparent 70%);
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     font-family: 'Bubblegum Sans', cursive;
     color: #ffffff;
-    overflow-y: auto;
+    position: relative;
 }
 
 .dadjoke-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     max-width: 900px;
     padding: 24px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
 }
 
 .joke-display {
